@@ -1,0 +1,239 @@
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    font-size: 15px;
+    outline: none !important;
+    text-decoration: none !important;
+    
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #f4f5f7 !important;
+}
+.btn, .form-control, .custom-select{
+    box-shadow: none !important;
+    border-radius: 30px;
+}
+.custom-select {
+    height: 60px;
+}
+.rounded{
+    border-radius: 20px !important;
+}
+.section{
+    padding: 90px 0;
+}
+.form-control{
+    height: 55px;
+}
+
+main.active #sidebar{
+    left: -300px;
+}
+main.active #main-page{
+    padding-left: 0px;
+}
+
+
+table th, table td {
+    white-space: nowrap;
+}
+
+/* ========================  P R E L O A D E R  ======================= */
+#preloader {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    background-color: white;
+}
+
+#preloader.loaded {
+    opacity: 1;
+    z-index: 99999;
+    animation-name: fadeout;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-delay: .5s;
+}
+
+/* ========================  A M I N A T I O N  ======================= */
+@keyframes fadeout{
+    0% {
+        opacity: 1;
+        z-index: 99999;
+    }
+    100% {
+        opacity: 0;
+        z-index: -99999;
+    }
+}
+
+
+
+
+
+
+/* 
+    ***********************************
+            S  I  D  E  B  A  R
+    ***********************************
+*/
+#sidebar{
+    position: fixed;
+    width: 250px;
+    left: 0px;
+    height: 100vh;
+    border-radius: 0 30px 30px 0;
+    z-index: 9999;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: .3s all ease-in-out;
+}
+#sidebar .sidebar-link{
+    display: block;
+    width: 80%;
+    margin: 5px auto;
+    padding: 17px 25px 17px 10px;
+    border-radius: 10px;
+    transition: .3s all ease-in-out;
+}
+#sidebar .sidebar-link i{
+    font-size: 19px;
+    margin: 0px 7px;
+}
+#sidebar .sidebar-link {
+    color: grey;
+}
+#sidebar .sidebar-link.active, .sidebar-link:hover{ 
+    color: #007bff !important;
+    background-color: #f8f9fa !important;
+}
+
+
+
+/* 
+    **************************************
+            M  A  I  N  P  A  G  E
+    **************************************
+*/
+#main-page{
+    padding-left: 250px;
+    width: 100%;
+    transition: .3s all ease-in-out;
+}
+
+/* 
+    **************************************
+            N    A   V   B   A   R
+    **************************************
+*/
+.navbar .nav-link{
+    padding: 0 15px;
+}
+.navbar .dropdown{
+    position: relative;
+}
+.navbar .dropdown-menu{
+    position: absolute;
+    top: 50px;
+    left: -80px;
+}
+.navbar .notification .dropdown-menu{
+    width: 300px;
+    top: 40px;
+    left: -190px;
+    max-height: 350px !important;
+    overflow-y: auto;
+}
+.navbar .dropdown-item{
+    padding: 15px;
+}
+.navbar .notification .dropdown-item{
+    padding: 20px;
+}
+.navbar .dropdown-menu p.name{
+    display: block;
+    margin: 5px 5px 10px 5px !important;
+    padding: 10px;
+    color: grey;
+    transition: .2s ease-in;
+}
+.navbar .notification .dropdown-menu .dropdown-item p{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 150px;
+    font-size: 14px;
+}
+.navbar .notification .dropdown-menu .dropdown-item span.time{
+    font-size: 13px;
+}
+.navbar .notification .dropdown-item:active .text-muted{
+    color: white !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:991px){
+    main.active #sidebar{
+        left: 0px;
+    }
+    main.active #main-page{
+        padding-left: 0px;
+    }
+    main.active .sidebar-overlay {
+        opacity: 1;
+        z-index: 9000;
+        position: fixed;
+    }
+
+    /* 
+        ***********************************
+                S  I  D  E  B  A  R
+        ***********************************
+    */
+    #sidebar{
+        left: -300px;
+    }
+    /* side bar overlay */
+    .sidebar-overlay{
+        position: absolute;
+        z-index: -9000;
+        height: 100vh;
+        width: 100vw;
+        top: 0px;
+        background-color: rgba(0, 0, 0, 0.3);
+        transition: .2s ease-in-out;
+        opacity: 0;
+    }
+    /* 
+        **************************************
+                M  A  I  N  P  A  G  E
+        **************************************
+    */
+    #main-page{
+        padding-left: 0px;
+        width: 100%;
+    }
+
+
+    .navbar .nav-link{
+        padding: 0 0px 0 25px;
+    }
+
+}
